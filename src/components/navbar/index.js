@@ -1,24 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { IoBook } from 'react-icons/io5'
+import { GiBookshelf } from 'react-icons/gi'
 import './style.css'
 
 export default function navbar() {
     return (
         <div>
             <div className="navbar">
-                <Link className="logo" to="/">Home</Link>
+
+                <Link className="logo" to="/"><GiBookshelf size="60px" /></Link>
 
                 <ul className="list">
-                    <li><Link to="/randomBook">Random Book</Link></li>
 
+                    <li><Link to="/randomBook">Random Book</Link></li>
                     <li>
                         <form onSubmit={(e) => e.preventDefault()} role="search">
-                            <label for="search">Search for stuff</label>
-                            <input id="search" type="search" placeholder="Search..." autofocus required />
-                            <button type="submit">Go</button>
+                            <input id="search" type="search" placeholder="Harry Potter..." required />
+                            <button type="submit"><IoBook size="30px" /></button>
                         </form>
                     </li>
+
                 </ul>
+
             </div>
         </div>
     )

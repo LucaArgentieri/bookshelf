@@ -1,0 +1,40 @@
+.randomBook_container {
+  background-color: #484d6d;
+  height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.randomBook_container h3 {
+  color: #f8ecc2;
+}
+
+.randomBook_container p {
+  text-align: center;
+  margin: 30px;
+  color: #f8ecc2;
+}
+
+a {
+  height: auto;
+  width: auto;
+  background-color: #f8ecc2;
+  text-align: center;
+  padding: 10px 50px;
+  border-radius: 10px;
+  color: #484d6d;
+}
+
+@media (max-width: 900px) {
+  .randomBook_container {
+    width: 300px;
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 100px;
+  }
+}

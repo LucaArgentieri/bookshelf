@@ -1,3 +1,21 @@
 .actionContainer {
   height: 100vh;
 }
+.actionContainer_flex {
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .actionContainer {
+    height: auto;
+  }
+  .actionContainer_flex {
+    margin-top: 50px;
+    flex-direction: column;
+    height: auto;
+  }
+}

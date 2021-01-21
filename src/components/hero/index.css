@@ -1,9 +1,24 @@
 h1 {
-  font-size: 300px;
+  font-size: 400px;
 }
 .hero {
   height: 100vh;
 }
 .title_right {
-  text-align: right;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.title_left {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 150px;
+  }
 }
