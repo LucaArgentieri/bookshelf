@@ -1,7 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-// api: AIzaSyApB_2T_9Zk3jYLxLgUVGfc431d_5sA758
 // guida api : https://developers.google.com/books/docs/v1/reference/?apix=true
 // console api: https://console.developers.google.com/apis/credentials?authuser=2&project=bookshelf-302413&supportedpurview=project
 // colore : #484D6D
