@@ -1,0 +1,9 @@
+h1 {
+  font-size: 300px;
+}
+.hero {
+  height: 100vh;
+}
+.title_right {
+  text-align: right;
+}
