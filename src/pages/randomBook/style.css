@@ -1,0 +1,25 @@
+.randomBook h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.randomBook_list {
+  margin: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+@media (max-width: 900px) {
+  .randomBook h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .randomBook_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -23,10 +23,10 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #484d6dcc;
 }
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 html,
 body {

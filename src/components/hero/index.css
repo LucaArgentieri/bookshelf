@@ -4,14 +4,33 @@ h1 {
 .hero {
   height: 100vh;
 }
+.hero .scrollBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: pulse alternate 1s infinite;
+  font-size: 20px;
+  cursor: pointer;
+}
+@keyframes pulse {
+  0% {
+    color: #484d6d;
+    transform: translateY(0);
+  }
+  100% {
+    color: #f8ecc2;
+    transform: translateY(-10px);
+  }
+}
 .title_right {
-  height: 50vh;
+  height: 45vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 .title_left {
-  height: 50vh;
+  height: 45vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;

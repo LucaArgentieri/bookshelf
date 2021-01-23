@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar from '../../components/navbar'
+import MobileNavbar from '../../components/mobileNavbar'
+
 
 
 export default function books() {
     return (
         <div>
+            <MobileNavbar />
             <Navbar />
-            <h1>Books</h1>
+            <p>Books</p>
         </div>
     )
 }

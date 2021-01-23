@@ -1,0 +1,23 @@
+.mobileNavbar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mobileNavbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobileNavbar ul li {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 900px) {
+  .mobileNavbar {
+    display: none;
+  }
+}
