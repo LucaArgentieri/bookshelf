@@ -13,7 +13,7 @@ export default function navbar() {
 
                 <ul className="list">
 
-                    <li><Link to="/randomBook">Random Book</Link></li>
+                    <li><Link to="/random-books">Random Books</Link></li>
                     <li>
                         <form onSubmit={(e) => e.preventDefault()} role="search">
                             <input id="search" type="search" placeholder="Harry Potter..." required />

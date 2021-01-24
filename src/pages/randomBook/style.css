@@ -1,3 +1,9 @@
+.loading_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
 .randomBook h2 {
   font-size: 30px;
   text-align: center;
@@ -9,7 +15,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
 }
-
 @media (max-width: 900px) {
   .randomBook h2 {
     margin-top: 20px;

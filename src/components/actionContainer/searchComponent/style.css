@@ -1,0 +1,16 @@
+.paperBorder input[type="search"] {
+  font-family: "Open Sans", sans-serif;
+  outline: 0;
+  width: 100%;
+  background: #f8ecc2;
+  border: 1px solid #f8ecc2;
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}

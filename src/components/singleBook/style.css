@@ -1,0 +1,13 @@
+.singleBook_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.singleBook_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.singleBook_container img {
+  height: 400px;
+}
