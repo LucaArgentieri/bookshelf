@@ -1,16 +1,47 @@
-.paperBorder input[type="search"] {
-  font-family: "Open Sans", sans-serif;
-  outline: 0;
-  width: 100%;
-  background: #f8ecc2;
-  border: 1px solid #f8ecc2;
-  padding: 0 1.6rem;
-  border-radius: var(--rad);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  transition: all var(--dur) var(--bez);
-  transition-property: width, border-radius;
-  z-index: 1;
-  position: relative;
+.searchBook_container {
+  background-color: #484d6d;
+  height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.searchBook_container:hover {
+  cursor: url("../../../assets/cursoryellow.png"), auto;
+}
+
+.searchBook_container h3 {
+  color: #f8ecc2;
+}
+
+.searchBook_container p {
+  text-align: center;
+  margin: 30px;
+  color: #f8ecc2;
+}
+
+.borderBtn {
+  border: 2px solid #f8ecc2;
+}
+
+a {
+  height: auto;
+  width: auto;
+  background-color: #f8ecc2;
+  text-align: center;
+  padding: 10px 50px;
+  border-radius: 10px;
+  color: #484d6d;
+}
+
+@media (max-width: 900px) {
+  .searchBook_container {
+    width: 300px;
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 100px;
+  }
 }

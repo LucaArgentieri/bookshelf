@@ -6,13 +6,18 @@ export default function SingleBook({ img, title, subtitle, authors, description,
         <div >
             <div className="singleBook_container">
                 <div className="singleBook_info">
-                    <h2>{title}</h2>
-                    <h2>{subtitle}</h2>
-                    <h2>{authors}</h2>
-                    <p>Description : {description}</p>
-                    <h2>{publisher}</h2>
+                    <h2>{title}{subtitle}</h2>
+                    <div>
+                        <h2>Author: </h2><p>{authors}</p>
+                    </div>
+                    <div>
+                        <h2>Description : </h2><p>{description}</p>
+                    </div>
+                    <div>
+                        <h2>Publisher: </h2><p>{publisher}</p>
+                    </div>
                 </div>
-                <div>
+                <div className="singleBook_img">
                     <img src={img} alt={title} />
                 </div>
             </div>

@@ -1,8 +1,8 @@
 import React from 'react'
-import './style.css'
 import { Link } from 'react-router-dom'
 
-export default function RandomBookCard({ id, title, img }) {
+
+export default function SearchedBookCard({ id, title, img }) {
     return (
         <Link to={`/books/${id}`}>
             <div className="randomBookCard">

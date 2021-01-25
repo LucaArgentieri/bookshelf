@@ -49,12 +49,12 @@ export default function Books() {
                 {
 
                     <SingleBook key={bookData.id}
-                        title={bookData.volumeInfo.title}
-                        subtitle={bookData.volumeInfo.subtitle}
-                        authors={bookData.volumeInfo.authors}
-                        description={bookData.volumeInfo.description}
-                        publisher={bookData.volumeInfo.publisher}
-                        img={bookData.volumeInfo.imageLinks.thumbnail}
+                        title={bookData.volumeInfo.title ? bookData.volumeInfo.title : 'Title not aviable'}
+                        subtitle={bookData.volumeInfo.subtitle ? " - " + bookData.volumeInfo.subtitle : ''}
+                        authors={bookData.volumeInfo.authors ? bookData.volumeInfo.authors : 'Authors not aviable'}
+                        description={bookData.volumeInfo.description ? bookData.volumeInfo.description : 'Description not aviable'}
+                        publisher={bookData.volumeInfo.publisher ? bookData.volumeInfo.publisher : 'Publisher not aviable'}
+                        img={bookData.volumeInfo.imageLinks.thumbnail ? bookData.volumeInfo.imageLinks.thumbnail : 'Image not aviable'}
                     />
 
                 }

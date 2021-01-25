@@ -23,14 +23,35 @@ export default function RandomBook() {
             return result;
         }
 
+
         // api  random + relevance
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${makeid(1)}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${makeid(2)}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
             .then((response) => {
                 setBookData(response.data.items)
+                console.log(response.data.items)
                 setIsLoading(false)
             })
             .catch(err => console.error(err))
     }, [])
+
+    function removeLastCharacter(str) {
+        if (str.length > 500) {
+            str = str.slice(0, -200) + '...';
+        }
+        if (str.length > 240) {
+            str = str.slice(0, -120) + '...';
+        }
+        if (str.length > 120) {
+            str = str.slice(0, -60) + '...';
+        }
+        if (str.length > 30) {
+            str = str.slice(0, -15) + '...';
+        }
+        if (str.length > 60) {
+            str = str.slice(0, -30) + '...';
+        }
+        return str
+    }
 
     if (isLoading) {
         return (
@@ -52,7 +73,12 @@ export default function RandomBook() {
                     {
 
                         bookData.map((book) => {
-                            return <RandomBookCard key={book.id} id={book.id} title={book.volumeInfo.title} img={book.volumeInfo.imageLinks.thumbnail} />
+                            return <RandomBookCard
+                                key={book.id}
+                                id={book.id}
+                                title={book.volumeInfo.title ? removeLastCharacter(book.volumeInfo.title) : 'Name not aviable'}
+                                img={book.volumeInfo.imageLinks === undefined ? 'Image not aviable' : book.volumeInfo.imageLinks.thumbnail}
+                            />
 
                         })
 

@@ -29,11 +29,17 @@ h1 {
   align-items: center;
   justify-content: flex-end;
 }
+.title_right h1:hover {
+  cursor: url("../../assets//cursoryellow.png"), auto;
+}
 .title_left {
   height: 45vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+.title_left h1:hover {
+  cursor: url("../../assets//cursoryellow.png"), auto;
 }
 
 @media (max-width: 900px) {

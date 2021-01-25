@@ -8,6 +8,9 @@
   flex-direction: column;
   border-radius: 10px;
 }
+.randomBook_container:hover {
+  cursor: url("../../../assets/cursoryellow.png"), auto;
+}
 
 .randomBook_container h3 {
   color: #f8ecc2;
