@@ -15,11 +15,11 @@ h1 {
 }
 @keyframes pulse {
   0% {
-    color: #484d6d;
+    color: var(--secondary);
     transform: translateY(0);
   }
   100% {
-    color: #f8ecc2;
+    color: var(--primary);
     transform: translateY(-10px);
   }
 }
@@ -44,6 +44,6 @@ h1 {
 
 @media (max-width: 900px) {
   h1 {
-    font-size: 150px;
+    font-size: 100px;
   }
 }

@@ -4,18 +4,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --primary: #e7efc5;
+  --secondary: #484d6d;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f8ecc2;
+  background: var(--primary);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #484d6d;
+  background: var(--secondary);
   border-radius: 10px;
 }
 
@@ -31,7 +41,7 @@
 html,
 body {
   cursor: url("./assets/cursorblue.png"), auto;
-  background-color: #f8ecc2;
+  background-color: var(--primary);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -51,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #484d6d;
+  color: var(--secondary);
   font-family: "Yeseva One", cursive;
   font-weight: 400;
 }

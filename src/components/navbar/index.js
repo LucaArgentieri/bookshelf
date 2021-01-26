@@ -6,7 +6,7 @@ import './style.css'
 
 export default function Navbar() {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState()
 
 
     return (
@@ -20,9 +20,11 @@ export default function Navbar() {
                     <li><Link to="/random-books">Random Books</Link></li>
                     <li>
                         <form onSubmit={(e) => e.preventDefault()} role="search">
-                            <input onChange={e => setValue(e.target.value)} id="search" type="search" placeholder="Harry Potter..." required />
+                            <input onChange={e => setValue(e.target.value)} id="search" type="search" placeholder="Harry Potter..." />
                         </form>
-                        <Link className="btn" to={`/searched-book/${value}`}><IoBook size="30px" /></Link>
+                        <Link className="btn" to={value !== undefined ? `/searched-book/${value}` : window.location}>
+                            <IoBook size="30px" />
+                        </Link>
 
                     </li>
 

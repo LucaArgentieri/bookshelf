@@ -7,7 +7,7 @@ import './style.css'
 
 export default function MobileNavbar() {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState()
 
 
     return (
@@ -20,7 +20,7 @@ export default function MobileNavbar() {
                     <form onSubmit={(e) => e.preventDefault()} role="search">
                         <input onChange={e => setValue(e.target.value)} id="search" type="search" placeholder="Harry Potter..." required />
                     </form>
-                    <Link to={`searched-book/${value}`}><IoBook size="30px" /></Link>
+                    <Link to={value !== undefined ? `/searched-book/${value}` : window.location}><IoBook size="30px" /></Link>
 
                 </li>
             </ul>

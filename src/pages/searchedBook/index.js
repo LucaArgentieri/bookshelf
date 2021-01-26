@@ -21,7 +21,7 @@ export default function SearchedBook() {
                 console.log(response.data.items)
             })
             .catch(err => console.error(err))
-    }, [])
+    }, [characters])
 
     if (!bookData) {
         return (
@@ -48,7 +48,7 @@ export default function SearchedBook() {
                             return <SearchedBookCard
                                 key={book.id}
                                 id={book.id}
-                                img={!book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.smallThumbnail || book.volumeInfo.imageLinks.smallThumbnail.small || book.volumeInfo.imageLinks.smallThumbnail.medium || book.volumeInfo.imageLinks.smallThumbnail.large || book.volumeInfo.imageLinks.smallThumbnail.extraLarge || console.log('Image not aviable') : book.volumeInfo.imageLinks.thumbnail}
+                                img={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'Image not aviable'}
                                 title={book.volumeInfo.title} />
 
                         })

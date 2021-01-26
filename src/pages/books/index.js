@@ -10,7 +10,6 @@ export default function Books() {
 
     const { id } = useParams()
     const [bookData, setBookData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
 
 
 
@@ -18,7 +17,6 @@ export default function Books() {
 
         axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
             .then((resp) => {
-                setIsLoading(false)
                 setBookData(resp.data)
                 console.log(resp.data)
             })
@@ -54,7 +52,9 @@ export default function Books() {
                         authors={bookData.volumeInfo.authors ? bookData.volumeInfo.authors : 'Authors not aviable'}
                         description={bookData.volumeInfo.description ? bookData.volumeInfo.description : 'Description not aviable'}
                         publisher={bookData.volumeInfo.publisher ? bookData.volumeInfo.publisher : 'Publisher not aviable'}
-                        img={bookData.volumeInfo.imageLinks.thumbnail ? bookData.volumeInfo.imageLinks.thumbnail : 'Image not aviable'}
+                        img={bookData.volumeInfo.imageLinks ? bookData.volumeInfo.imageLinks.thumbnail || bookData.volumeInfo.imageLinks.smallThumbnail : 'Image not aviable'}
+                        price={bookData.saleInfo.listPrice ? bookData.saleInfo.listPrice.amount : 'Price not aviable'}
+                        currency={bookData.saleInfo.listPrice ? bookData.saleInfo.listPrice.currencyCode = '€' : ''}
                     />
 
                 }

@@ -1,5 +1,5 @@
 .randomBook_container {
-  background-color: #484d6d;
+  background-color: var(--secondary);
   height: 400px;
   width: 500px;
   display: flex;
@@ -13,23 +13,23 @@
 }
 
 .randomBook_container h3 {
-  color: #f8ecc2;
+  color: var(--primary);
 }
 
 .randomBook_container p {
   text-align: center;
   margin: 30px;
-  color: #f8ecc2;
+  color: var(--primary);
 }
 
 a {
   height: auto;
   width: auto;
-  background-color: #f8ecc2;
+  background-color: var(--primary);
   text-align: center;
   padding: 10px 50px;
   border-radius: 10px;
-  color: #484d6d;
+  color: var(--secondary);
 }
 
 @media (max-width: 900px) {

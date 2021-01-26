@@ -26,11 +26,26 @@ p {
 .singleBook_img_mobile {
   display: none;
 }
+.singleBook_title_mobile {
+  display: none;
+}
 .singleBook_container img {
   height: 400px;
 }
 
 @media (max-width: 900px) {
+  .singleBook_title {
+    display: none;
+  }
+  .singleBook_title_mobile {
+    display: inline;
+    margin-bottom: 20px;
+  }
+  .singleBook_container img {
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
   .singleBook_info h2,
   p {
     margin-top: 25px;
