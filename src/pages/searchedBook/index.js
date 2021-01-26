@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './style.css'
 import Navbar from '../../components/navbar'
 import MobileNavbar from '../../components/mobileNavbar'
 import SearchedBookCard from '../../components/searchedBookCard'
@@ -11,21 +12,18 @@ export default function SearchedBook() {
     // const { characters } = useParams()
 
     const { characters } = useParams()
-    const [name, setName] = useState('')
     const [bookData, setBookData] = useState()
-    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${name}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${characters}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
             .then((response) => {
                 setBookData(response.data.items)
                 console.log(response.data.items)
-                // setIsLoading(false)
             })
             .catch(err => console.error(err))
     }, [])
 
-    if (isLoading) {
+    if (!bookData) {
         return (
             <div className="randomBook">
                 <MobileNavbar />
@@ -40,8 +38,24 @@ export default function SearchedBook() {
             < div >
                 <MobileNavbar />
                 <Navbar />
-                <h1>Searched Book</h1>
-                <SearchedBookCard />
+                <div className="searchedBookContainer" >
+                    <h3>You searched: {characters}</h3>
+                </div>
+                <div className="searchedBook_list">
+
+                    {
+                        bookData.map((book) => {
+                            return <SearchedBookCard
+                                key={book.id}
+                                id={book.id}
+                                img={!book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.smallThumbnail || book.volumeInfo.imageLinks.smallThumbnail.small || book.volumeInfo.imageLinks.smallThumbnail.medium || book.volumeInfo.imageLinks.smallThumbnail.large || book.volumeInfo.imageLinks.smallThumbnail.extraLarge || console.log('Image not aviable') : book.volumeInfo.imageLinks.thumbnail}
+                                title={book.volumeInfo.title} />
+
+                        })
+
+                    }
+                </div>
+
             </div >
         )
     }

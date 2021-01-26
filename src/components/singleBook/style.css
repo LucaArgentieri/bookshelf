@@ -23,11 +23,27 @@ p {
   justify-content: flex-start;
   flex-direction: column;
 }
+.singleBook_img_mobile {
+  display: none;
+}
 .singleBook_container img {
   height: 400px;
 }
 
 @media (max-width: 900px) {
+  .singleBook_info h2,
+  p {
+    margin-top: 25px;
+  }
+  .singleBook_img_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .singleBook_img {
+    display: none;
+  }
   .singleBook_container {
     display: flex;
     justify-content: center;

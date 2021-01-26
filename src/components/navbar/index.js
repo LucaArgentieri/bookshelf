@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IoBook } from 'react-icons/io5'
 import { GiBookshelf } from 'react-icons/gi'
 import './style.css'
 
-export default function navbar() {
+export default function Navbar() {
+
+    const [value, setValue] = useState('')
+
+
     return (
         <div>
             <div className="navbar">
@@ -16,9 +20,10 @@ export default function navbar() {
                     <li><Link to="/random-books">Random Books</Link></li>
                     <li>
                         <form onSubmit={(e) => e.preventDefault()} role="search">
-                            <input id="search" type="search" placeholder="Harry Potter..." required />
-                            <button type="submit"><IoBook size="30px" /></button>
+                            <input onChange={e => setValue(e.target.value)} id="search" type="search" placeholder="Harry Potter..." required />
                         </form>
+                        <Link className="btn" to={`/searched-book/${value}`}><IoBook size="30px" /></Link>
+
                     </li>
 
                 </ul>

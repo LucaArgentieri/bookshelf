@@ -23,6 +23,10 @@
 }
 
 .borderBtn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #f8ecc2;
 }
 
@@ -37,6 +41,9 @@ a {
 }
 
 @media (max-width: 900px) {
+  form {
+    width: auto;
+  }
   .searchBook_container {
     width: 300px;
     flex-direction: column;

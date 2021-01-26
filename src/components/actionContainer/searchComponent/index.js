@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoBook } from 'react-icons/io5'
 import './style.css'
+import { Link } from 'react-router-dom'
 
-export default function searchComponent() {
+export default function SearchComponent() {
+
+
+    const [value, setValue] = useState('')
 
     return (
         <div className="searchBook_container">
@@ -10,8 +14,8 @@ export default function searchComponent() {
             <p>Do you want to know more about a book that interests you? <br /> Use the bar below
 </p>
             <form onSubmit={(e) => e.preventDefault()} role="search">
-                <input id="search" type="search" placeholder="Write here..." required />
-                <button className="borderBtn" type="submit"><IoBook size="30px" /></button>
+                <input onChange={e => setValue(e.target.value)} id="search" type="search" placeholder="Write here..." required />
+                <Link className="borderBtn" to={`searched-book/${value}`}><IoBook size="30px" /></Link>
             </form>
         </div>
     )
