@@ -38,6 +38,8 @@ a {
     flex-direction: column;
     height: auto;
     padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin-bottom: 100px;
   }
 }

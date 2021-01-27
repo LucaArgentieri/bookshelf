@@ -52,6 +52,12 @@ h1 {
 }
 
 @media (max-width: 900px) {
+  .title_right {
+    height: 40vh;
+  }
+  .title_left {
+    height: 40vh;
+  }
   h1 {
     font-size: 100px;
   }
