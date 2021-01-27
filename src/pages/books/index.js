@@ -18,7 +18,6 @@ export default function Books() {
         axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`)
             .then((resp) => {
                 setBookData(resp.data)
-                console.log(resp.data)
             })
             .catch((err) => {
                 console.error(err)

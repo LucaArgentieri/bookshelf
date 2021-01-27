@@ -2,11 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 50vh;
+}
+.loading_container p a {
+  margin: 0;
+  padding: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+.titleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.titleButton div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  padding: 20px 10px;
+  height: 20px;
+  color: var(--primary);
+  border-radius: 10px;
+  cursor: pointer;
 }
 .randomBook h2 {
   font-size: 30px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .randomBook_list {
@@ -16,6 +41,10 @@
   gap: 50px;
 }
 @media (max-width: 900px) {
+  .loading_container {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
   .randomBook h2 {
     margin-top: 20px;
     font-size: 30px;

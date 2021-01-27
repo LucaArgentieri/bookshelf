@@ -11,6 +11,9 @@ export default function RandomBook() {
     const [bookData, setBookData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
+
+
+
     useEffect(() => {
         // random letter generator
         function makeid(length) {
@@ -23,12 +26,10 @@ export default function RandomBook() {
             return result;
         }
 
-
         // api  random + relevance
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${makeid(2)}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
             .then((response) => {
                 setBookData(response.data.items)
-                console.log(response.data.items)
                 setIsLoading(false)
             })
             .catch(err => console.error(err))
@@ -68,7 +69,11 @@ export default function RandomBook() {
             <div className="randomBook">
                 <MobileNavbar />
                 <Navbar />
-                <h2>Random Books</h2>
+                <div className="titleButton">
+                    <h2>Random Books</h2>
+                    <div onClick={() => window.location.reload()}>Refresh content</div>
+                </div>
+
                 <div className="randomBook_list">
                     {
 

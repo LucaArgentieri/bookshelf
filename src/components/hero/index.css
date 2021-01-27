@@ -12,6 +12,7 @@ h1 {
   animation: pulse alternate 1s infinite;
   font-size: 20px;
   cursor: pointer;
+  padding: 20px;
 }
 @keyframes pulse {
   0% {
@@ -28,6 +29,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .title_right h1:hover {
   cursor: url("../../assets//cursoryellow.png"), auto;
@@ -37,9 +39,16 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 10px;
 }
 .title_left h1:hover {
   cursor: url("../../assets//cursoryellow.png"), auto;
+}
+
+@media (max-width: 1300px) {
+  h1 {
+    font-size: 300px;
+  }
 }
 
 @media (max-width: 900px) {

@@ -3,7 +3,7 @@ import './style.css'
 import Navbar from '../../components/navbar'
 import MobileNavbar from '../../components/mobileNavbar'
 import SearchedBookCard from '../../components/searchedBookCard'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default function SearchedBook() {
@@ -14,14 +14,29 @@ export default function SearchedBook() {
     const { characters } = useParams()
     const [bookData, setBookData] = useState()
 
+
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${characters}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
             .then((response) => {
-                setBookData(response.data.items)
-                console.log(response.data.items)
+                response.data.items ? setBookData(response.data.items) : response.data.items = undefined
             })
             .catch(err => console.error(err))
     }, [characters])
+
+    if (bookData === undefined) {
+        return (
+            <div className="randomBook">
+                <MobileNavbar />
+                <Navbar />
+                <div className="loading_container">
+                    <h2>{characters} doesn't exist, but you could write it yourself!</h2>
+                    <p>Search another book or click <Link to={'/random-books'}>here</Link> for get a random one.</p>
+                </div>
+
+            </div>
+        )
+    }
+
 
     if (!bookData) {
         return (

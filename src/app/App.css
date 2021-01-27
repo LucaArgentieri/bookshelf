@@ -7,8 +7,8 @@
 :root {
   --rad: 0.7rem;
   --dur: 0.3s;
-  --primary: #e7efc5;
-  --secondary: #484d6d;
+  --primary: #fef4dd;
+  --secondary: #353b57;
   --height: 5rem;
   --btn-width: 6rem;
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
@@ -31,7 +31,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #484d6dcc;
+  background: #353b57ea;
 }
 /* img {
   max-width: 100%;
@@ -40,7 +40,7 @@
 
 html,
 body {
-  cursor: url("./assets/cursorblue.png"), auto;
+  cursor: url("../assets/cursorblue.png"), auto;
   background-color: var(--primary);
   font-family: "Open Sans", sans-serif;
 }
