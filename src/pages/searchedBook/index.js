@@ -13,15 +13,29 @@ export default function SearchedBook() {
 
     const { characters } = useParams()
     const [bookData, setBookData] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${characters}&orderBy=relevance&key=${process.env.REACT_APP_BOOKS_TOKEN}`)
             .then((response) => {
                 response.data.items ? setBookData(response.data.items) : response.data.items = undefined
+                setIsLoading(false)
             })
             .catch(err => console.error(err))
     }, [characters])
+
+    if (isLoading) {
+        return (
+            <div className="randomBook">
+                <MobileNavbar />
+                <Navbar />
+                <div className="loading_container">
+                    <h3>Searching...</h3>
+                </div>
+            </div>
+        )
+    }
 
     if (bookData === undefined) {
         return (
